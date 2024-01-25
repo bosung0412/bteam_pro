@@ -45,7 +45,7 @@ public class FAQBoardController {
     }
 
     // update
-    @PutMapping("/{id}")
+    @PutMapping("/faqwrite/{id}")
     public FAQBoard updateFAQBoard(@PathVariable Long id, @RequestBody FAQBoard faqBoardDetails) {
         FAQBoard faqBoard = faqBoardService.findById(id).orElse(null);
         if (faqBoard != null) {
