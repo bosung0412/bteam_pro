@@ -45,7 +45,7 @@ public class FAQBoardController {
     }
 
     // update
-    @PutMapping("/faqwrite/{id}")
+    @PutMapping("/{id}")
     public FAQBoard updateFAQBoard(@PathVariable Long id, @RequestBody FAQBoard faqBoardDetails) {
         FAQBoard faqBoard = faqBoardService.findById(id).orElse(null);
         if (faqBoard != null) {
@@ -60,7 +60,7 @@ public class FAQBoardController {
     }
 
     // 삭제
-    @DeleteMapping("/faqdelete/{id}")
+    @DeleteMapping("/{id}")
     public void deleteFAQBoard(@PathVariable Long id) {
         faqBoardService.deleteById(id);
     }
